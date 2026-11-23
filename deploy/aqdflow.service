@@ -1,0 +1,14 @@
+[Unit]
+Description=AqdFlow (عقد فلو) Interactive Proposal, E-Sign & GCC Tax Invoice Server
+After=network-online.target
+
+[Service]
+Type=simple
+WorkingDirectory=/opt/aqdflow
+EnvironmentFile=/etc/aqdflow/.env
+ExecStart=/usr/bin/node --no-warnings /opt/aqdflow/server/index.mjs
+Restart=on-failure
+RestartSec=3
+
+[Install]
+WantedBy=default.target
